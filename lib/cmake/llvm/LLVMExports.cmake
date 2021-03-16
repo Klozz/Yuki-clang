@@ -366,7 +366,7 @@ set_target_properties(LLVMDebugInfoMSF PROPERTIES
 add_library(LLVMDebugInfoCodeView STATIC IMPORTED)
 
 set_target_properties(LLVMDebugInfoCodeView PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMSupport;LLVMDebugInfoMSF"
+  INTERFACE_LINK_LIBRARIES "LLVMSupport"
 )
 
 # Create imported target LLVMDebugInfoPDB
@@ -534,7 +534,7 @@ set_target_properties(LLVMAArch64Utils PROPERTIES
 add_library(LLVMX86CodeGen STATIC IMPORTED)
 
 set_target_properties(LLVMX86CodeGen PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVMAnalysis;LLVMAsmPrinter;LLVMCodeGen;LLVMCore;LLVMMC;LLVMSelectionDAG;LLVMSupport;LLVMTarget;LLVMX86Desc;LLVMX86Info;LLVMGlobalISel;LLVMProfileData;LLVMCFGuard"
+  INTERFACE_LINK_LIBRARIES "LLVMAnalysis;LLVMAsmPrinter;LLVMCodeGen;LLVMCore;LLVMMC;LLVMSelectionDAG;LLVMSupport;LLVMTarget;LLVMTransformUtils;LLVMX86Desc;LLVMX86Info;LLVMGlobalISel;LLVMProfileData;LLVMCFGuard"
 )
 
 # Create imported target LLVMX86AsmParser
