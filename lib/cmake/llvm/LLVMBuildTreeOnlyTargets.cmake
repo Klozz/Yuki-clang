@@ -89,7 +89,6 @@ add_library(TestPlugin MODULE IMPORTED)
 add_library(gtest STATIC IMPORTED)
 
 set_target_properties(gtest PROPERTIES
-  INTERFACE_COMPILE_DEFINITIONS "GTEST_HAS_TR1_TUPLE=0"
   INTERFACE_INCLUDE_DIRECTORIES "/root/yukiclang/build/llvm-project/llvm/utils/unittest/googletest/include;/root/yukiclang/build/llvm-project/llvm/utils/unittest/googlemock/include"
   INTERFACE_LINK_LIBRARIES "pthread;LLVMSupport"
 )
