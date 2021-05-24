@@ -209,6 +209,8 @@ set(LLVM_ENABLE_SHARED_LIBS OFF)
 set(LLVM_DEFAULT_EXTERNAL_LIT "/root/yukiclang/build/build/llvm/stage1/./bin/llvm-lit")
 set(LLVM_LIT_ARGS "-sv")
 
+set(LLVM_HAVE_LIBXAR "")
+
 if(NOT TARGET LLVMSupport)
   include("/root/yukiclang/build/build/llvm/stage1/lib/cmake/llvm/LLVMExports.cmake")
   include("/root/yukiclang/build/build/llvm/stage1/lib/cmake/llvm/LLVMBuildTreeOnlyTargets.cmake")
