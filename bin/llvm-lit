@@ -23,6 +23,7 @@ def path(p):
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), p)
 
 
+map_config(path(r'../../../../llvm-project/compiler-rt/test/tsan/lit.cfg.py'), path(r'../projects/compiler-rt/test/tsan/X86_64Config/lit.site.cfg.py'))
 map_config(path(r'../../../../llvm-project/clang/test/lit.cfg.py'), path(r'../tools/clang/test/lit.site.cfg.py'))
 map_config(path(r'../../../../llvm-project/clang/test/Unit/lit.cfg.py'), path(r'../tools/clang/test/Unit/lit.site.cfg.py'))
 map_config(path(r'../../../../llvm-project/lld/test/lit.cfg.py'), path(r'../tools/lld/test/lit.site.cfg.py'))
