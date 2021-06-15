@@ -18,9 +18,10 @@ def map_config(source_dir, site_config):
 builtin_parameters = { 'build_mode' : '.' }
 
 # Allow generated file to be relocatable.
+from pathlib import Path
 def path(p):
     if not p: return ''
-    return os.path.join(os.path.dirname(os.path.abspath(__file__)), p)
+    return str((Path(__file__).parent / p).resolve())
 
 
 map_config(path(r'../../../../llvm-project/compiler-rt/test/tsan/lit.cfg.py'), path(r'../projects/compiler-rt/test/tsan/X86_64Config/lit.site.cfg.py'))
