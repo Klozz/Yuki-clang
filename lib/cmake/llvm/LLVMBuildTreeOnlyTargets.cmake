@@ -16,7 +16,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_targetsDefined)
 set(_targetsNotDefined)
 set(_expectedTargets)
-foreach(_expectedTarget LLVMHello LLVMTestingSupport FileCheck llvm-PerfectShuffle count not yaml-bench BugpointPasses lli-child-target llvm-jitlink-executor obj2yaml yaml2obj TestPlugin gtest gtest_main)
+foreach(_expectedTarget LLVMHello LLVMTestingSupport FileCheck llvm-PerfectShuffle count not yaml-bench BugpointPasses lli-child-target llvm-jitlink-executor obj2yaml yaml2obj TestPlugin DoublerPlugin gtest gtest_main)
   list(APPEND _expectedTargets ${_expectedTarget})
   if(NOT TARGET ${_expectedTarget})
     list(APPEND _targetsNotDefined ${_expectedTarget})
@@ -84,6 +84,9 @@ add_executable(yaml2obj IMPORTED)
 
 # Create imported target TestPlugin
 add_library(TestPlugin MODULE IMPORTED)
+
+# Create imported target DoublerPlugin
+add_library(DoublerPlugin MODULE IMPORTED)
 
 # Create imported target gtest
 add_library(gtest STATIC IMPORTED)
@@ -182,6 +185,14 @@ set_property(TARGET TestPlugin APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(TestPlugin PROPERTIES
   IMPORTED_COMMON_LANGUAGE_RUNTIME_RELEASE ""
   IMPORTED_LOCATION_RELEASE "/root/yukiclang/build/build/llvm/stage1/unittests/Passes/TestPlugin.so"
+  IMPORTED_NO_SONAME_RELEASE "TRUE"
+  )
+
+# Import target "DoublerPlugin" for configuration "Release"
+set_property(TARGET DoublerPlugin APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(DoublerPlugin PROPERTIES
+  IMPORTED_COMMON_LANGUAGE_RUNTIME_RELEASE ""
+  IMPORTED_LOCATION_RELEASE "/root/yukiclang/build/build/llvm/stage1/unittests/Passes/DoublerPlugin.so"
   IMPORTED_NO_SONAME_RELEASE "TRUE"
   )
 
