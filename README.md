@@ -1,3 +1,5 @@
+## Yuki CLANG 18.0.0 > 
+  Yuki clang 18.0.0 or superior will be moved to https://bitbucket.org/thexperienceproject/yuki-clang/
 # Yuki-clang
 
 This is a [LLVM](https://llvm.org/) and [Clang](https://clang.llvm.org/) compiler toolchain built for kernel development. Builds are always made from the latest LLVM sources rather than stable releases, so complete stability cannot be guaranteed.
